@@ -68,12 +68,12 @@ public class Step02_AzureAIAgent_Plugins
     {
         Console.WriteLine("=== Using Semantic Kernel with Menu Plugin ===");
         
-        // Create Semantic Kernel with Azure OpenAI
-        var builder = Kernel.CreateBuilder()
-            .AddAzureOpenAIChatCompletion(
-                config.ChatModelId,
-                config.Endpoint,
-                new AzureCliCredential());
+    
+        IKernelBuilder builder = Kernel.CreateBuilder().AddAzureOpenAIChatCompletion(
+      config.ChatModelId,
+       config.Endpoint,
+       config.ApiKey
+   );
 
         // Add the menu plugin
         builder.Plugins.Add(KernelPluginFactory.CreateFromType<MenuPlugin>());
@@ -114,12 +114,12 @@ public class Step02_AzureAIAgent_Plugins
     {
         Console.WriteLine("=== Using Semantic Kernel with Widget Factory Plugin ===");
         
-        // Create Semantic Kernel with Azure OpenAI
-        var builder = Kernel.CreateBuilder()
-            .AddAzureOpenAIChatCompletion(
-                config.ChatModelId,
-                config.Endpoint,
-                new AzureCliCredential());
+    
+        IKernelBuilder builder = Kernel.CreateBuilder().AddAzureOpenAIChatCompletion(
+      config.ChatModelId,
+       config.Endpoint,
+       config.ApiKey
+   );
 
         // Add the widget factory plugin
         builder.Plugins.Add(KernelPluginFactory.CreateFromType<WidgetFactory>());
@@ -148,12 +148,12 @@ public class Step02_AzureAIAgent_Plugins
     {
         Console.WriteLine("=== Using Semantic Kernel with Custom Prompt Function ===");
         
-        // Create Semantic Kernel with Azure OpenAI
-        var builder = Kernel.CreateBuilder()
-            .AddAzureOpenAIChatCompletion(
-                config.ChatModelId,
-                config.Endpoint,
-                new AzureCliCredential());
+
+        IKernelBuilder builder = Kernel.CreateBuilder().AddAzureOpenAIChatCompletion(
+      config.ChatModelId,
+       config.Endpoint,
+       config.ApiKey
+   );
 
         // Define prompt function
         KernelFunction promptFunction =
