@@ -34,6 +34,7 @@ public class Step08_AzureAIAgent_Declarative
         // Load configuration
         var configRoot = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
+            .AddUserSecrets<Step08_AzureAIAgent_Declarative>(optional: true)
             .AddEnvironmentVariables()
             .Build();
 

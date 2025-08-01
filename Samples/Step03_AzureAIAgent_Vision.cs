@@ -35,6 +35,7 @@ public class Step03_AzureAIAgent_Vision
         // Load configuration
         var configRoot = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
+            .AddUserSecrets<Step03_AzureAIAgent_Vision>(optional: true)
             .AddEnvironmentVariables()
             .Build();
 

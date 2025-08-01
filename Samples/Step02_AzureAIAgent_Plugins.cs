@@ -36,6 +36,7 @@ public class Step02_AzureAIAgent_Plugins
         // Load configuration
         var configRoot = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
+            .AddUserSecrets<Step02_AzureAIAgent_Plugins>(optional: true)
             .AddEnvironmentVariables()
             .Build();
 

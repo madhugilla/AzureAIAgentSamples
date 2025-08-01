@@ -34,6 +34,7 @@ public class Step05_AzureAIAgent_FileSearch
         // Load configuration
         var configRoot = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
+            .AddUserSecrets<Step05_AzureAIAgent_FileSearch>(optional: true)
             .AddEnvironmentVariables()
             .Build();
 

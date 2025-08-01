@@ -34,6 +34,7 @@ public class Step04_AzureAIAgent_CodeInterpreter
         // Load configuration
         var configRoot = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
+            .AddUserSecrets<Step04_AzureAIAgent_CodeInterpreter>(optional: true)
             .AddEnvironmentVariables()
             .Build();
 

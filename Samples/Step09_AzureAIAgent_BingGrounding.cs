@@ -34,6 +34,7 @@ public class Step09_AzureAIAgent_BingGrounding
         // Load configuration
         var configRoot = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
+            .AddUserSecrets<Step09_AzureAIAgent_BingGrounding>(optional: true)
             .AddEnvironmentVariables()
             .Build();
 

@@ -34,6 +34,7 @@ public class Step06_AzureAIAgent_OpenAPI
         // Load configuration
         var configRoot = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
+            .AddUserSecrets<Step06_AzureAIAgent_OpenAPI>(optional: true)
             .AddEnvironmentVariables()
             .Build();
 

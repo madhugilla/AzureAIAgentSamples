@@ -75,6 +75,7 @@ public class Step07_AzureAIAgent_Functions
         // Load configuration
         var configRoot = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
+            .AddUserSecrets<Step07_AzureAIAgent_Functions>(optional: true)
             .AddEnvironmentVariables()
             .Build();
 

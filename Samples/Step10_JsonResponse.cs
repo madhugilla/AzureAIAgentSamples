@@ -56,6 +56,7 @@ public class Step10_JsonResponse
         // Load configuration
         var configRoot = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
+            .AddUserSecrets<Step10_JsonResponse>(optional: true)
             .AddEnvironmentVariables()
             .Build();
 
