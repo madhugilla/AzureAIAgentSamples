@@ -22,6 +22,7 @@ public class Step07_AzureAIAgent_Functions
     {
         public string Endpoint { get; set; } = string.Empty;
         public string ChatModelId { get; set; } = string.Empty;
+        public string ApiKey { get; set; } = string.Empty;
     }
 
     /// <summary>
@@ -108,7 +109,7 @@ public class Step07_AzureAIAgent_Functions
             .AddAzureOpenAIChatCompletion(
                 config.ChatModelId,
                 config.Endpoint,
-                new AzureCliCredential());
+                config.ApiKey);
 
         // Add custom math plugin
         builder.Plugins.Add(KernelPluginFactory.CreateFromType<MathPlugin>());
@@ -149,7 +150,7 @@ public class Step07_AzureAIAgent_Functions
             .AddAzureOpenAIChatCompletion(
                 config.ChatModelId,
                 config.Endpoint,
-                new AzureCliCredential());
+                config.ApiKey);
 
         // Define custom prompt functions
         var summarizeFunction = KernelFunctionFactory.CreateFromPrompt(

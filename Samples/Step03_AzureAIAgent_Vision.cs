@@ -69,7 +69,7 @@ public class Step03_AzureAIAgent_Vision
             .AddAzureOpenAIChatCompletion(
                 config.ChatModelId,
                 config.Endpoint,
-                new AzureCliCredential());
+                config.ApiKey);
         
         var kernel = builder.Build();
         var chatService = kernel.GetRequiredService<IChatCompletionService>();
@@ -105,7 +105,7 @@ public class Step03_AzureAIAgent_Vision
             .AddAzureOpenAIChatCompletion(
                 config.ChatModelId,
                 config.Endpoint,
-                new AzureCliCredential());
+                config.ApiKey);
         
         var kernel = builder.Build();
         var chatService = kernel.GetRequiredService<IChatCompletionService>();

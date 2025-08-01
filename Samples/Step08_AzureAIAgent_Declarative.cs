@@ -21,6 +21,7 @@ public class Step08_AzureAIAgent_Declarative
     {
         public string Endpoint { get; set; } = string.Empty;
         public string ChatModelId { get; set; } = string.Empty;
+        public string ApiKey { get; set; } = string.Empty;
     }
 
     /// <summary>
@@ -67,7 +68,7 @@ public class Step08_AzureAIAgent_Declarative
             .AddAzureOpenAIChatCompletion(
                 config.ChatModelId,
                 config.Endpoint,
-                new AzureCliCredential());
+                config.ApiKey);
         
         var kernel = builder.Build();
 
@@ -129,7 +130,7 @@ public class Step08_AzureAIAgent_Declarative
             .AddAzureOpenAIChatCompletion(
                 config.ChatModelId,
                 config.Endpoint,
-                new AzureCliCredential());
+                config.ApiKey);
         
         var kernel = builder.Build();
 

@@ -21,6 +21,7 @@ public class Step05_AzureAIAgent_FileSearch
     {
         public string Endpoint { get; set; } = string.Empty;
         public string ChatModelId { get; set; } = string.Empty;
+        public string ApiKey { get; set; } = string.Empty;
     }
 
     /// <summary>
@@ -68,7 +69,7 @@ public class Step05_AzureAIAgent_FileSearch
             .AddAzureOpenAIChatCompletion(
                 config.ChatModelId,
                 config.Endpoint,
-                new AzureCliCredential());
+                config.ApiKey);
         
         var kernel = builder.Build();
         var chatService = kernel.GetRequiredService<IChatCompletionService>();
@@ -122,7 +123,7 @@ public class Step05_AzureAIAgent_FileSearch
             .AddAzureOpenAIChatCompletion(
                 config.ChatModelId,
                 config.Endpoint,
-                new AzureCliCredential());
+                config.ApiKey);
         
         var kernel = builder.Build();
         var chatService = kernel.GetRequiredService<IChatCompletionService>();
